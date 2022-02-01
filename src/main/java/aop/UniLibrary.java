@@ -11,6 +11,7 @@ public class UniLibrary extends AbstractLibrary{
     }
 
     public String returnBook(){
+        //int a = 10/0; //for test exception @Around
         System.out.println("Мы возвращаем книгу в UniLibrary");
         return "Lord of the Rings";
     }
