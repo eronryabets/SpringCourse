@@ -1,4 +1,4 @@
 package hibernate_test;
 
-public class Test {
+public class Test3 {
 }
