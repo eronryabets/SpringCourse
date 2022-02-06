@@ -1,6 +1,6 @@
-package hibernate_one_to_many_bi.entity;
+package hibernate_one_to_many_bi;
 
-public class MyTest {
+public class MyTestErrors {
     public static void main(String[] args) {
 
     }

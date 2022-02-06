@@ -1,13 +1,12 @@
-package hibernate_one_to_many_bi;
+package hibernate_one_to_meny_uni;
 
 
-import hibernate_one_to_many_bi.entity.Department;
-import hibernate_one_to_many_bi.entity.Employee;
+
+import hibernate_one_to_meny_uni.entity.Department;
+import hibernate_one_to_meny_uni.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
-import java.util.List;
 
 public class Test1 {
     public static void main(String[] args) {
@@ -24,8 +23,9 @@ public class Test1 {
             session = factory.getCurrentSession();
             session.beginTransaction();
 
-            Employee employee = session.get(Employee.class, 2);
-            session.delete(employee);
+            Department department = session.get(Department.class,3);
+            session.delete(department);
+
 
             session.getTransaction().commit();
             System.out.println("Done!");
@@ -41,9 +41,9 @@ public class Test1 {
 }
 
 /*
-            Department dep = new Department("IT", 300,1200);
-            Employee emp1 = new Employee("Zaur", "Tregulov",800);
-            Employee emp2 = new Employee("Elena", "Smirnova",100);
+            Department dep = new Department("HR", 500,1500);
+            Employee emp1 = new Employee("Oleg", "Ivanov",800);
+            Employee emp2 = new Employee("Andrey", "Sidorov",100);
             dep.addEmployeeToDepartment(emp1);
             dep.addEmployeeToDepartment(emp2);
             session.save(dep);
@@ -58,7 +58,7 @@ public class Test1 {
  */
 
 /*
- Department department = session.get(Department.class,1);
+            Department department = session.get(Department.class,1);
             System.out.println(department);
             System.out.println(department.getEmps());
  */
