@@ -10,12 +10,15 @@ import java.util.List;
 public class Test3 {
     public static void main(String[] args) {
 
-        try (SessionFactory factory = new Configuration()
+        SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
-                .buildSessionFactory()) {
+                .buildSessionFactory();
 
-            Session session = factory.getCurrentSession();
+        Session session = null;
+        try  {
+
+            session = factory.getCurrentSession();
             session.beginTransaction();
 
 //            List<Employee> emps = session.createQuery("from Employee")
@@ -31,9 +34,9 @@ public class Test3 {
             System.out.println("Done!");
 
         }
-
-
-
-
+        finally {
+            session.close();
+            factory.close();
+        }
     }
 }

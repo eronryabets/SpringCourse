@@ -8,11 +8,13 @@ import org.hibernate.cfg.Configuration;
 public class Test1 {
     public static void main(String[] args) {
 
-        try (SessionFactory factory = new Configuration()
+        SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
-                .buildSessionFactory()) {
-            Session session = factory.getCurrentSession();
+                .buildSessionFactory();
+        Session session = null;
+        try  {
+            session = factory.getCurrentSession();
             Employee emp = new Employee("Aleksandr", "Ivanov",
                     "IT", 600);
             session.beginTransaction();
@@ -22,8 +24,10 @@ public class Test1 {
             System.out.println("Done!");
 
         }
-
-
+        finally {
+            session.close();
+            factory.close();
+        }
 
 
     }
