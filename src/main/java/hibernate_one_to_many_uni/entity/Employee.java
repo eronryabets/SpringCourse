@@ -1,4 +1,4 @@
-package hibernate_one_to_meny_uni.entity;
+package hibernate_one_to_many_uni.entity;
 
 import javax.persistence.*;
 

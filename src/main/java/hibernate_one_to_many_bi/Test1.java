@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.util.List;
+
 
 public class Test1 {
     public static void main(String[] args) {
@@ -24,10 +24,15 @@ public class Test1 {
             session = factory.getCurrentSession();
             session.beginTransaction();
 
-            Employee employee = session.get(Employee.class, 2);
-            session.delete(employee);
-
+            System.out.println("Get department");
+            Department department = session.get(Department.class, 4);
+            System.out.println("Show department");
+            System.out.println(department);
+            System.out.println("Подгрузим наших работников");
+            department.getEmps().get(0);
             session.getTransaction().commit();
+            System.out.println("Show employees of the department");
+            System.out.println(department.getEmps());
             System.out.println("Done!");
         }
         finally {
@@ -41,11 +46,31 @@ public class Test1 {
 }
 
 /*
+System.out.println("Get department");
+            Department department = session.get(Department.class, 4);
+            System.out.println("Show department");
+            System.out.println(department);
+            System.out.println("Show employees of the department");
+            System.out.println(department.getEmps());
+ */
+
+/*
             Department dep = new Department("IT", 300,1200);
             Employee emp1 = new Employee("Zaur", "Tregulov",800);
             Employee emp2 = new Employee("Elena", "Smirnova",100);
             dep.addEmployeeToDepartment(emp1);
             dep.addEmployeeToDepartment(emp2);
+            session.save(dep);
+ */
+
+/*
+Department dep = new Department("Sales", 1500,800);
+            Employee emp1 = new Employee("Zaur", "Tregulov",800);
+            Employee emp2 = new Employee("Elena", "Smirnova",1500);
+            Employee emp3 = new Employee("Anton", "Sidorov",1200);
+            dep.addEmployeeToDepartment(emp1);
+            dep.addEmployeeToDepartment(emp2);
+            dep.addEmployeeToDepartment(emp3);
             session.save(dep);
  */
 
