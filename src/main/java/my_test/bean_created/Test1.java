@@ -1,4 +1,4 @@
-package my_test;
+package my_test.bean_created;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,6 +10,9 @@ public class Test1 {
             Person person = context.getBean("personBean", Person.class);
             System.out.println(person);
             System.out.println(person.getPet());
+            person.getPet().voice();
+            person.sayHello();
+
         }
     }
 }

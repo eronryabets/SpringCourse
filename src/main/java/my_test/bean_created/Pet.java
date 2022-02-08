@@ -1,4 +1,4 @@
-package my_test;
+package my_test.bean_created;
 
 public interface Pet {
     public void voice();

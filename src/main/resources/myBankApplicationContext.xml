@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="my_test.bean_created"/>
-    <context:property-placeholder location="myTestApp.properties"/>
+    <context:component-scan base-package="my_test.bean_hibernate"/>
+    <context:property-placeholder location="myBank.properties"/>
 
 </beans>
