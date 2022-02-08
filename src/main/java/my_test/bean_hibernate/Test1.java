@@ -2,7 +2,7 @@ package my_test.bean_hibernate;
 
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+//создание бинов
 public class Test1 {
     public static void main(String[] args) {
         try(ClassPathXmlApplicationContext context =

@@ -108,6 +108,7 @@ public class Person {
             wallets = new ArrayList<>();
         }
         wallets.add(wallet);
+        wallet.setPerson(this);
     }
 
     @Override
